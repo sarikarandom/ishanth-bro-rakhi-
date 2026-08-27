@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ishanth's Rakhi Surprise 🎀</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:15px;
+    font-family:Arial,sans-serif;
+    background:linear-gradient(135deg,#64dcff,#806cff,#ff83bd);
+    overflow:hidden;
+}
+
+.app{
+    width:100%;
+    max-width:620px;
+    min-height:680px;
+    background:white;
+    border-radius:30px;
+    overflow:hidden;
+    box-shadow:0 25px 70px rgba(40,20,100,.35);
+}
+
+.header{
+    background:linear-gradient(135deg,#643bff,#ff4388);
+    color:white;
+    text-align:center;
+    padding:23px 12px;
+}
+
+.header h1{
+    margin:0;
+    font-size:27px;
+}
+
+.header p{
+    margin:7px 0 0;
+    font-size:14px;
+}
+
+.content{
+    padding:30px 18px;
+    min-height:590px;
+    text-align:center;
+}
+
+.page{
+    animation:enter .45s ease;
+}
+
+.hide{
+    display:none;
+}
+
+@keyframes enter{
+    from{
+        opacity:0;
+        transform:scale(.88) translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1) translateY(0);
+    }
+}
+
+.emoji{
+    font-size:78px;
+    margin:8px 0;
+    animation:bounce 1s infinite alternate;
+}
+
+@keyframes bounce{
+    to{
+        transform:translateY(-10px) rotate(4deg);
+    }
+}
+
+h2{
+    color:#633bff;
+    font-size:30px;
+    margin:10px 0 15px;
+}
+
+p{
+    color:#555;
+    font-size:16px;
+    line-height:1.65;
+}
+
+.box{
+    background:#f4f0ff;
+    border:2px dashed #7655ff;
+    border-radius:22px;
+    padding:17px;
+    margin-top:20px;
+    line-height:1.9;
+}
+
+.btn{
+    margin-top:25px;
+    padding:16px 28px;
+    border:0;
+    border-radius:40px;
+    background:linear-gradient(135deg,#ff4388,#ff9e3d);
+    color:white;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+    box-shadow:0 10px 25px rgba(255,60,130,.3);
+    transition:.18s;
+}
+
+.btn:hover{
+    transform:scale(1.07);
+}
+
+.btn:active{
+    transform:scale(.88);
+}
+
+.characters{
+    display:flex;
+    justify-content:center;
+    gap:18px;
+    margin:25px;
+}
+
+.character{
+    width:82px;
+    height:82px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:42px;
+    animation:float 1.5s infinite alternate;
+}
+
+.character:nth-child(2){
+    animation-delay:.25s;
+}
+
+.character:nth-child(3){
+    animation-delay:.5s;
+}
+
+@keyframes float{
+    to{
+        transform:translateY(-10px);
+    }
+}
+
+.bubble{
+    text-align:left;
+    padding:14px 16px;
+    margin:10px 0;
+    border-radius:20px;
+    animation:pop .4s ease;
+}
+
+.b1{
+    background:#ffe8f1;
+}
+
+.b2{
+    background:#e9edff;
+}
+
+.b3{
+    background:#e1faff;
+}
+
+@keyframes pop{
+    from{
+        opacity:0;
+        transform:scale(.7);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+.fake{
+    background:#fff2f2;
+    border:2px solid #ffc1c1;
+    border-radius:23px;
+    padding:23px;
+    margin-top:22px;
+}
+
+.fake h3{
+    color:#ff4d4d;
+    font-size:22px;
+}
+
+.progress{
+    height:17px;
+    background:#eee;
+    border-radius:20px;
+    overflow:hidden;
+    margin:15px 0;
+}
+
+.fill{
+    height:100%;
+    width:0;
+    background:linear-gradient(90deg,#633bff,#ff4388);
+    transition:1.7s;
+}
+
+/* RAKHI */
+
+.rakhi{
+    width:270px;
+    height:190px;
+    margin:5px auto;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.thread{
+    position:absolute;
+    width:270px;
+    height:24px;
+    border-radius:20px;
+    background:repeating-linear-gradient(
+        45deg,
+        #ff4388 0 10px,
+        #ffd43d 10px 20px,
+        #704cff 20px 30px
+    );
+}
+
+.rakhi-center{
+    width:130px;
+    height:130px;
+    border-radius:50%;
+    border:8px solid white;
+    background:radial-gradient(
+        circle,
+        white 0 12%,
+        #ffd43d 13% 34%,
+        #ff4388 35% 60%,
+        #704cff 61%
+    );
+    z-index:2;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 15px 35px rgba(89,53,160,.3);
+    animation:rakhi 1.2s infinite alternate;
+}
+
+.rakhi-center:after{
+    content:"★";
+    font-size:58px;
+    color:white;
+}
+
+@keyframes rakhi{
+    to{
+        transform:scale(1.08) rotate(5deg);
+    }
+}
+
+/* AKKA CARD */
+
+.akka-card{
+    background:#fff1f7;
+    border:2px solid #ffd3e4;
+    border-radius:25px;
+    padding:23px 17px;
+    margin-top:18px;
+}
+
+.row{
+    text-align:left;
+    padding:6px 0;
+}
+
+.signature{
+    font-family:cursive;
+    font-size:24px;
+    color:#ff4388;
+    margin-top:17px;
+}
+
+/* CONFETTI */
+
+.confetti{
+    position:fixed;
+    top:-20px;
+    width:9px;
+    height:14px;
+    z-index:99;
+    animation:fall 3s linear forwards;
+}
+
+@keyframes fall{
+    to{
+        transform:translateY(110vh) rotate(720deg);
+    }
+}
+
+@media(max-width:430px){
+
+    .header h1{
+        font-size:21px;
+    }
+
+    .content{
+        padding:27px 14px;
+    }
+
+    h2{
+        font-size:26px;
+    }
+
+    .character{
+        width:70px;
+        height:70px;
+        font-size:37px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="app">
+
+<div class="header">
+
+<h1>🎀 ISHANTH'S SECRET WORLD 🚀</h1>
+
+<p>
+Something is waiting for you... 👀
+</p>
+
+</div>
+
+
+<div class="content">
+
+
+<!-- PAGE 1 -->
+
+<div id="page1" class="page">
+
+<div class="emoji">
+🚨👀
+</div>
+
+<h2>
+HEY ISHANTH!
+</h2>
+
+<p>
+
+<b>STOP RIGHT THERE! 🛑😂</b>
+
+<br><br>
+
+This website is <b>NOT for everyone...</b>
+
+<br><br>
+
+Only one special person can enter.
+
+</p>
+
+
+<div class="box">
+
+🔍 Visitor detected...
+
+<br>
+
+👤 Name: <b>ISHANTH</b>
+
+<br>
+
+⚠️ Naughty level:
+<b>VERY HIGH 😂</b>
+
+</div>
+
+
+<button class="btn" onclick="goToPage(2)">
+
+YES, THAT'S ME! 😎
+
+</button>
+
+</div>
+
+
+
+<!-- PAGE 2 -->
+
+<div id="page2" class="page hide">
+
+<div class="emoji">
+🔓🚀
+</div>
+
+<h2>
+ACCESS GRANTED!
+</h2>
+
+<p>
+
+Okay Ishanth...
+
+<br>
+
+You're officially inside! 😎
+
+<br><br>
+
+Checking your surprise...
+
+</p>
+
+
+<div class="progress">
+
+<div id="loadingFill" class="fill"></div>
+
+</div>
+
+
+<p id="loadingText">
+
+Checking... 0%
+
+</p>
+
+</div>
+
+
+
+<!-- PAGE 3 -->
+
+<div id="page3" class="page hide">
+
+<h2>
+👀 WAIT A SECOND...
+</h2>
+
+<p>
+Someone is fighting to give you the surprise! 😂
+</p>
+
+
+<div class="characters">
+
+<div class="character" style="background:#ffe4ed">
+🕷️
+</div>
+
+<div class="character" style="background:#e5eaff">
+🦸
+</div>
+
+<div class="character" style="background:#e0faff">
+🤖
+</div>
+
+</div>
+
+
+<div class="bubble b1">
+
+🕷️ <b>Web Hero:</b>
+
+<br>
+
+"ISHANTH! I'M FIRST! 😤"
+
+</div>
+
+
+<div class="bubble b2">
+
+🦸 <b>Super Hero:</b>
+
+<br>
+
+"Move bro! I'm the actual hero! 😂"
+
+</div>
+
+
+<div class="bubble b3">
+
+🤖 <b>Robot:</b>
+
+<br>
+
+"ERROR... Everyone is fighting. 😂"
+
+</div>
+
+
+<button class="btn" onclick="goToPage(4)">
+
+😂 OKAY, SHOW ME!
+
+</button>
+
+</div>
+
+
+
+<!-- PAGE 4 -->
+
+<div id="page4" class="page hide">
+
+<div class="emoji">
+🎁😳
+</div>
+
+<h2>
+YOUR SURPRISE IS HERE!
+</h2>
+
+
+<div class="fake">
+
+<h3>
+⚠️ WAIT...
+</h3>
+
+<p>
+Downloading surprise...
+</p>
+
+
+<div class="progress">
+
+<div class="fill" style="width:100%">
+</div>
+
+</div>
+
+
+<p>
+
+❌ <b>DOWNLOAD FAILED!</b>
+
+<br><br>
+
+Reason:
+
+<br>
+
+<b>
+Surprise is TOO AWESOME. 😂
+</b>
+
+</p>
+
+</div>
+
+
+<button class="btn" onclick="goToPage(5)">
+
+😎 TRY AGAIN
+
+</button>
+
+</div>
+
+
+
+<!-- PAGE 5 -->
+
+<div id="page5" class="page hide">
+
+<div class="rakhi">
+
+<div class="thread">
+</div>
+
+<div class="rakhi-center">
+</div>
+
+</div>
+
+
+<h2>
+🎀 HAPPY RAKHI ISHANTH! ❤️
+</h2>
+
+
+<p>
+
+The surprise finally loaded! 😎
+
+<br><br>
+
+You are officially:
+
+<br><br>
+
+<b style="font-size:23px">
+
+🦸 SUPER THAMMUDU 🦸
+
+</b>
+
+<br><br>
+
+Rakhi Power:
+
+<b>
+100% 🔥
+</b>
+
+</p>
+
+
+<button class="btn" onclick="goToPage(6)">
+
+😎 MEET YOUR AKKA
+
+</button>
+
+</div>
+
+
+
+<!-- PAGE 6 -->
+
+<div id="page6" class="page hide">
+
+<div class="emoji">
+👑😎
+</div>
+
+
+<h2>
+🔐 CONFIDENTIAL FILE
+</h2>
+
+
+<div class="akka-card">
+
+
+<div class="row">
+
+👩 Name:
+
+<b>
+Sarika
+</b>
+
+</div>
+
+
+<div class="row">
+
+👑 Position:
+
+<b>
+Best Akka 😎
+</b>
+
+</div>
+
+
+<div class="row">
+
+🎯 Special Skill:
+
+<b>
+Always supporting Ishanth
+</b>
+
+</div>
+
+
+<div class="row">
+
+🦸 Superpower:
+
+<b>
+Akka's unlimited blessings
+</b>
+
+</div>
+
+
+<div class="row">
+
+❤️ Weakness:
+
+<b>
+Her little brother
+</b>
+
+</div>
+
+
+<br>
+
+
+<p>
+
+Oye Ishanth! 😂
+
+<br><br>
+
+Baga chaduvuko 📚
+
+<br>
+
+Full ga enjoy cheyyi 🎮
+
+<br>
+
+Always happy ga undu ❤️
+
+<br><br>
+
+<b>
+Nee dreams anni achieve cheyyali! 🚀😎
+</b>
+
+</p>
+
+
+<div class="signature">
+
+— Your Sarika Akka 😎🎀
+
+</div>
+
+</div>
+
+
+<button class="btn" onclick="goToPage(7)">
+
+🎁 AKKA HAS ONE MORE THING...
+
+</button>
+
+</div>
+
+
+
+<!-- PAGE 7 -->
+
+<div id="page7" class="page hide">
+
+<div class="emoji">
+😎🎁
+</div>
+
+
+<h2>
+ONE LAST MESSAGE! ❤️
+</h2>
+
+
+<p>
+
+Ishanth...
+
+<br><br>
+
+Keep smiling 😄
+
+<br>
+
+Keep learning 📚
+
+<br>
+
+Keep dreaming big 🚀
+
+<br><br>
+
+<b>
+And always remember...
+</b>
+
+<br><br>
+
+Your Akka is always cheering for you! 🎀❤️
+
+</p>
+
+
+<button class="btn" onclick="goToPage(8)">
+
+🎉 FINAL SURPRISE
+
+</button>
+
+</div>
+
+
+
+<!-- PAGE 8 -->
+
+<div id="page8" class="page hide">
+
+<div class="emoji">
+🎉🎀❤️
+</div>
+
+
+<h2>
+SURPRISE COMPLETE!
+</h2>
+
+
+<p>
+
+<b>
+ISHANTH = SUPER THAMMUDU 🦸
+</b>
+
+<br><br>
+
+<b>
+SARIKA = AKKA BOSS 👑
+</b>
+
+<br><br>
+
+No escaping Akka. 😎
+
+<br><br>
+
+<b>
+HAPPY RAKHI! ❤️
+</b>
+
+<br><br>
+
+Stay happy. Stay awesome.
+
+<br>
+
+And yes...
+
+<b>
+study also! 📚😂
+</b>
+
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+
+<script>
+
+
+function goToPage(number){
+
+    document
+    .querySelectorAll(".page")
+    .forEach(function(page){
+
+        page.classList.add("hide");
+
+    });
+
+
+    document
+    .getElementById("page" + number)
+    .classList.remove("hide");
+
+
+    if(number === 2){
+
+        startLoading();
+
+    }
+
+
+    if(number === 5 || number === 8){
+
+        makeConfetti();
+
+    }
+
+}
+
+
+
+function startLoading(){
+
+    var fill =
+        document.getElementById("loadingFill");
+
+    var text =
+        document.getElementById("loadingText");
+
+
+    setTimeout(function(){
+
+        fill.style.width = "30%";
+
+        text.innerText =
+            "Checking... 30%";
+
+    },100);
+
+
+    setTimeout(function(){
+
+        fill.style.width = "60%";
+
+        text.innerText =
+            "Finding surprise... 60%";
+
+    },700);
+
+
+    setTimeout(function(){
+
+        fill.style.width = "85%";
+
+        text.innerText =
+            "Almost there... 85%";
+
+    },1200);
+
+
+    setTimeout(function(){
+
+        fill.style.width = "100%";
+
+        text.innerText =
+            "SURPRISE FOUND! 🎉";
+
+    },1600);
+
+
+    setTimeout(function(){
+
+        goToPage(3);
+
+    },2200);
+
+}
+
+
+
+function makeConfetti(){
+
+    for(
+        var i = 0;
+        i < 100;
+        i++
+    ){
+
+        var piece =
+            document.createElement("div");
+
+
+        piece.className =
+            "confetti";
+
+
+        piece.style.left =
+            Math.random() * 100 + "vw";
+
+
+        var colors = [
+
+            "#ff4388",
+            "#ffd43d",
+            "#704cff",
+            "#35c9ff",
+            "#55d98a"
+
+        ];
+
+
+        piece.style.background =
+            colors[
+                Math.floor(
+                    Math.random() * colors.length
+                )
+            ];
+
+
+        piece.style.animationDelay =
+            Math.random() * 1.3 + "s";
+
+
+        document
+        .body
+        .appendChild(piece);
+
+
+        setTimeout(function(){
+
+            piece.remove();
+
+        },4000);
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
